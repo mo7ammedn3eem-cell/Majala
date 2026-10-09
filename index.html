@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html lang="ar" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+        <title>مجلة المؤتمر العلمي الثامن لجراحة التجميل والترميم والحروق 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@700;800;900&family=Amiri:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Paged.js: يقسّم المحتوى إلى صفحات A4 حقيقية للطباعة و PDF -->
+    <script src="https://unpkg.com/pagedjs@0.4.3/dist/paged.polyfill.js"></script>
+    <style>
+      /* عرض الصفحات على الشاشة بشكل منفصل مثل المجلة */
+      @media screen {
+        html, body { background: #5d6878 !important; }
+        .pagedjs_pages { padding: 10mm 0; }
+        .pagedjs_page { margin: 0 auto 8mm auto !important; box-shadow: 0 4px 24px rgba(0,0,0,.35); background:#fff; }
+      }
+      @media print { html, body { background: none !important; } }
+    </style>
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      @page :first {
+        margin: 0;
+        @top-left {
+          content: none;
+        }
+        @top-center {
+          content: none;
+        }
+        @top-right {
+          content: none;
+        }
+        @bottom-left {
+          content: none;
+        }
+        @bottom-center {
+          content: none;
+        }
+        @bottom-right {
+          content: none;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Tajawal', 'Cairo', sans-serif;
+        color: #1a2b4a;
+        direction: ltr;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      /* ======== PAGE SHELL ======== */
+      .page {
+        position: relative;
+        width: 210mm;
+        height: 296.8mm;
+        overflow: hidden;
+        box-sizing: border-box;
+        background: #eef1f5;
+        direction: rtl;
+        break-after: page;
+        page-break-after: always;
+      }
+      .page.last {
+        break-after: auto;
+        page-break-after: auto;
+      }
+      .page .bg-soft {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 85% 30%, rgba(79, 195, 247, 0.1), transparent 45%),
+          radial-gradient(circle at 10% 75%, rgba(21, 101, 192, 0.08), transparent 45%),
+          linear-gradient(180deg, #f4f6f9 0%, #eef1f5 60%, #e9edf3 100%);
+      }
+      .wave-top,
+      .wave-bottom,
+      .wave-svg {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        display: block;
+      }
+      .wave-top {
+        top: 0;
+        height: 36mm;
+      }
+      .wave-bottom {
+        bottom: 0;
+        height: 28mm;
+      }
+
+      .foot {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 4.5mm;
+        text-align: center;
+        color: #fff;
+        font-size: 8.5pt;
+        font-weight: 700;
+        letter-spacing: 0.2mm;
+        z-index: 5;
+      }
+      .foot .num {
+        display: inline-block;
+        margin-right: 2.5mm;
+        background: #fff;
+        color: #0b3d91;
+        font-family: 'Cairo', sans-serif;
+        font-weight: 900;
+        border-radius: 3mm;
+        padding: 0 2.6mm;
+        line-height: 5.6mm;
+        font-size: 9pt;
+        box-shadow: 0 1mm 2mm rgba(0, 0, 0, 0.18);
+      }
+      .foot .sep {
+        display: inline-block;
+        width: 6mm;
+        height: 0.3mm;
+        background: rgba(255, 255, 255, 0.7);
+        vertical-align: middle;
+        margin: 0 2mm;
+      }
+
+      /* ======== SHARED ELEMENTS ======== */
+      .logo-circle {
+        position: absolute;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow:
+          0 2mm 6mm rgba(11, 61, 145, 0.28),
+          0 0 0 1mm rgba(255, 255, 255, 0.55);
+        padding: 1.2mm;
+        overflow: hidden;
+      }
+      .logo-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        border-radius: 50%;
+      }
+      .logo-circle.pad img {
+        border-radius: 0;
+        padding: 3.5mm 6mm;
+      }
+
+      .ph {
+        position: absolute;
+        border: 1.5mm solid #fff;
+        border-radius: 3.5mm;
+        overflow: hidden;
+        box-shadow: 0 2.5mm 7mm rgba(5, 30, 80, 0.35);
+        background: #dfe7f1;
+      }
+      .ph img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .capsule {
+        position: absolute;
+        background: linear-gradient(180deg, #ffffff 0%, #f3f8fd 100%);
+        border-radius: 12mm;
+        border: 0.35mm solid #cde7f9;
+        box-shadow:
+          0 2.5mm 7mm rgba(11, 61, 145, 0.16),
+          inset 0 -0.8mm 0 rgba(30, 155, 232, 0.12);
+        text-align: center;
+        z-index: 2;
+      }
+      .cap-accent {
+        position: absolute;
+        border-radius: 12mm;
+        background: linear-gradient(90deg, #0b3d91, #1565c0 45%, #1e9be8 80%, #4fc3f7);
+        z-index: 1;
+      }
+      .deco-line {
+        display: inline-block;
+        width: 16mm;
+        height: 0.6mm;
+        vertical-align: middle;
+        border-radius: 0.3mm;
+        background: linear-gradient(90deg, #4fc3f7, #1565c0);
+        margin: 0 4mm;
+      }
+      .deco-line.r {
+        background: linear-gradient(90deg, #1565c0, #4fc3f7);
+      }
+
+      .title-cairo {
+        font-family: 'Cairo', sans-serif;
+        font-weight: 900;
+        color: #0b3d91;
+      }
+
+      /* ======== COVER ======== */
+      .cover {
+        background: #eef1f5;
+      }
+      .cover .top-svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 172mm;
+        display: block;
+      }
+      .cover .issue {
+        position: absolute;
+        top: 63mm;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 3;
+      }
+      .cover .issue span {
+        display: inline-block;
+        border: 0.35mm solid rgba(255, 255, 255, 0.65);
+        color: #fff;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 4mm;
+        padding: 0 5mm;
+        line-height: 7mm;
+        font-weight: 800;
+        font-size: 10pt;
+        letter-spacing: 0.3mm;
+      }
+      .cover .issue span b {
+        color: #ffd9d9;
+        font-weight: 800;
+      }
+      .cover .assoc-line {
+        position: absolute;
+        top: 73mm;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 10.5pt;
+        font-weight: 700;
+        z-index: 3;
+      }
+      .cover .collage {
+        position: absolute;
+        top: 95mm;
+        left: -10mm;
+        width: 230mm;
+        height: 64mm;
+        transform: rotate(-4deg);
+        z-index: 4;
+      }
+      .cover .ctext {
+        position: absolute;
+        top: 176mm;
+        left: 12mm;
+        right: 12mm;
+        text-align: center;
+        z-index: 3;
+      }
+      .cover h1 {
+        font-family: 'Cairo', sans-serif;
+        font-weight: 900;
+        font-size: 40pt;
+        line-height: 1.25;
+        color: #0b3d91;
+        letter-spacing: -0.2mm;
+      }
+      .cover h2 {
+        font-family: 'Cairo', sans-serif;
+        font-weight: 800;
+        font-size: 21pt;
+        line-height: 1.35;
+        color: #1565c0;
+      }
+      .cover .en {
+        direction: ltr;
+        font-family: 'Tajawal', sans-serif;
+        font-weight: 800;
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #1e9be8;
+        margin-top: 2mm;
+        letter-spacing: 0.1mm;
+      }
+      .cover .divider {
+        margin: 3.5mm auto 3mm;
+        width: 60mm;
+        height: 1mm;
+        position: relative;
+      }
+      .cover .divider i {
+        position: absolute;
+        top: 0;
+        height: 1mm;
+        border-radius: 0.5mm;
+      }
+      .cover .divider i.a {
+        right: 0;
+        width: 26mm;
+        background: linear-gradient(90deg, #4fc3f7, #1565c0);
+      }
+      .cover .divider i.b {
+        right: 28mm;
+        width: 4mm;
+        background: #d32f2f;
+      }
+      .cover .divider i.c {
+        left: 0;
+        width: 26mm;
+        background: linear-gradient(90deg, #1565c0, #4fc3f7);
+      }
+      .cover .slogan {
+        font-weight: 800;
+        font-size: 13pt;
+        color: #0b3d91;
+      }
+      .cover .slogan-en {
+        direction: ltr;
+        font-size: 9.5pt;
+        color: #5b6f8f;
+        font-weight: 500;
+        letter-spacing: 0.3mm;
+        margin-top: 0.6mm;
+      }
+      .cover .badge {
+        display: inline-block;
+        margin-top: 5mm;
+        line-height: 10mm;
+        padding: 0 7mm;
+        border-radius: 5mm;
+        background: linear-gradient(90deg, #0b3d91, #1565c0 55%, #1e9be8);
+        color: #fff;
+        font-weight: 800;
+        font-size: 11.5pt;
+        box-shadow: 0 2mm 5mm rgba(11, 61, 145, 0.3);
+      }
+      .cover .badge .bar {
+        display: inline-block;
+        width: 0.35mm;
+        height: 5mm;
+        background: rgba(255, 255, 255, 0.6);
+        vertical-align: middle;
+        margin: 0 3.5mm;
+      }
+      .cover .badge svg {
+        width: 4.4mm;
+        height: 4.4mm;
+        vertical-align: -0.9mm;
+        margin-left: 1.5mm;
+      }
+
+      /* ======== IDENTITY PAGE ======== */
+      .ident .halo {
+        position: absolute;
+        top: 104mm;
+        left: 25mm;
+        width: 160mm;
+        height: 160mm;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(79, 195, 247, 0.38) 0%,
+          rgba(79, 195, 247, 0.14) 40%,
+          rgba(79, 195, 247, 0) 68%
+        );
+      }
+      .ident .ring {
+        position: absolute;
+        top: 122mm;
+        left: 45mm;
+        width: 120mm;
+        height: 120mm;
+        border-radius: 50%;
+        border: 0.35mm solid rgba(30, 155, 232, 0.22);
+      }
+      .ident .ring.two {
+        top: 112mm;
+        left: 35mm;
+        width: 140mm;
+        height: 140mm;
+        border-color: rgba(21, 101, 192, 0.12);
+      }
+      .ident .big8 {
+        position: absolute;
+        top: 116mm;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        height: 134mm;
+        width: 80.4mm;
+        display: block;
+      }
+      .ident .tagline {
+        position: absolute;
+        top: 253mm;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+      .ident .tagline .ar {
+        font-weight: 800;
+        font-size: 11pt;
+        color: #0b3d91;
+      }
+      .ident .tagline .en {
+        direction: ltr;
+        font-size: 9pt;
+        letter-spacing: 0.5mm;
+        color: #1565c0;
+        font-weight: 500;
+        margin-top: 0.8mm;
+        text-transform: uppercase;
+      }
+
+      /* ======== TOC ======== */
+      .toc-title {
+        top: 44mm;
+        left: 32mm;
+        right: 32mm;
+        height: 26mm;
+        line-height: 26mm;
+      }
+      .toc-title .t {
+        font-family: 'Cairo', sans-serif;
+        font-weight: 900;
+        font-size: 28pt;
+        color: #0b3d91;
+        vertical-align: middle;
+      }
+      .toc-accent {
+        top: 50mm;
+        left: 26mm;
+        width: 40mm;
+        height: 24mm;
+        transform: skewX(-18deg);
+      }
+      .toc-accent.r {
+        left: auto;
+        right: 26mm;
+        top: 40mm;
+        height: 22mm;
+        width: 34mm;
+      }
+      .toc-item {
+        position: absolute;
+        left: 24mm;
+        right: 22mm;
+        height: 17mm;
+        background: linear-gradient(90deg, #f2f8fe, #ffffff 60%);
+        border-radius: 8.5mm;
+        border: 0.35mm solid #bfe3fa;
+        box-shadow: 0 1.8mm 5mm rgba(11, 61, 145, 0.12);
+      }
+      .toc-item .n {
+        position: absolute;
+        right: -3mm;
+        top: -1.6mm;
+        width: 30mm;
+        height: 20.2mm;
+        line-height: 20.2mm;
+        text-align: center;
+        color: #fff;
+        font-family: 'Cairo', sans-serif;
+        font-weight: 900;
+        font-size: 19pt;
+        background: linear-gradient(120deg, #0b3d91, #1565c0 50%, #1e9be8);
+        clip-path: polygon(18% 0, 100% 0, 82% 100%, 0 100%);
+      }
+      .toc-item .ttl {
+        position: absolute;
+        right: 33mm;
+        top: 0;
+        line-height: 17mm;
+        font-weight: 800;
+        font-size: 15pt;
+        color: #0b3d91;
+        white-space: nowrap;
+      }
+      .toc-item .lead {
+        position: absolute;
+        left: 22mm;
+        top: 8.2mm;
+        width: 34mm;
+        height: 0.6mm;
+        border-radius: 0.3mm;
+        background: linear-gradient(90deg, #0b3d91, #4fc3f7);
+      }
+      .toc-item .lead::before {
+        content: '';
+        position: absolute;
+        left: -1mm;
+        top: -0.9mm;
+        width: 2.4mm;
+        height: 2.4mm;
+        border-radius: 50%;
+        background: #0b3d91;
+      }
+      .toc-item .pg {
+        position: absolute;
+        left: 4.5mm;
+        top: 3mm;
+        width: 14mm;
+        height: 11mm;
+        line-height: 11mm;
+        text-align: center;
+        border-radius: 5.5mm;
+        background: #e3f2fd;
+        color: #1565c0;
+        font-family: 'Cairo', sans-serif;
+        font-weight: 900;
+        font-size: 11.5pt;
+      }
+
+      /* ======== INTRO ======== */
+      .welcome-band {
+        position: absolute;
+        top: 128mm;
+        left: 8mm;
+        right: 8mm;
+        height: 42mm;
+        border-radius: 21mm;
+        background: linear-gradient(90deg, #0b3d91, #1565c0 30%, #1e9be8 70%, #4fc3f7);
+        transform: skewY(-3deg);
+        opacity: 0.95;
+      }
+      .welcome-card {
+        position: absolute;
+        top: 104mm;
+        left: 22mm;
+        right: 22mm;
+        height: 90mm;
+        padding-top: 14mm;
+        background: linear-gradient(180deg, #ffffff, #f2f8fe);
+        border: 0.8mm solid #1e9be8;
+        border-radius: 11mm;
+        text-align: center;
+        z-index: 2;
+        box-shadow: 0 3mm 9mm rgba(11, 61, 145, 0.22);
+      }
+      .welcome-card .l1 {
+        font-weight: 800;
+        font-size: 17pt;
+        color: #1565c0;
+        line-height: 1.55;
+      }
+      .welcome-card .l2 {
+        font-family: 'Cairo', sans-serif;
+        font-weight: 900;
+        font-size: 31pt;
+        color: #0b3d91;
+        line-height: 1.4;
+        margin-top: 2mm;
+      }
+      .welcome-card .l3 {
+        font-family: 'Cairo', sans-serif;
+        font-weight: 800;
+        font-size: 17pt;
+        color: #1e9be8;
+        line-height: 1.4;
+      }
+      .welcome-card .mini {
+        margin: 3mm auto 0;
+        width: 30mm;
+        height: 0.9mm;
+        border-radius: 0.5mm;
+        background: linear-gradient(90deg, #4fc3f7, #1565c0, #4fc3f7);
+      }
+      .info-box {
+        position: absolute;
+        top: 210mm;
+        width: 52mm;
+        height: 46mm;
+        background: #fff;
+        border-radius: 6mm;
+        border: 0.35mm solid #cde7f9;
+        box-shadow: 0 2mm 6mm rgba(11, 61, 145, 0.12);
+        text-align: center;
+        padding-top: 5mm;
+      }
+      .info-box .ic {
+        margin: 0 auto;
+        width: 14mm;
+        height: 14mm;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #0b3d91, #1e9be8);
+        color: #fff;
+        padding: 3.3mm;
+        box-shadow: 0 1.5mm 4mm rgba(21, 101, 192, 0.35);
+      }
+      .info-box .ic svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .info-box .lbl {
+        margin-top: 2.5mm;
+        font-size: 9pt;
+        color: #6a7d99;
+        font-weight: 700;
+      }
+      .info-box .val {
+        margin-top: 0.8mm;
+        font-size: 11pt;
+        color: #0b3d91;
+        font-weight: 800;
+        line-height: 1.35;
+        padding: 0 3mm;
+      }
+
+      /* ======== SPEECH PAGES ======== */
+      .sp-photo-accent {
+        position: absolute;
+        top: 24mm;
+        right: 12mm;
+        width: 54mm;
+        height: 60mm;
+        border-radius: 8mm;
+        background: linear-gradient(135deg, #4fc3f7, #1565c0);
+        opacity: 0.35;
+        transform: rotate(4deg);
+      }
+      .sp-photo {
+        position: absolute;
+        top: 18mm;
+        right: 16mm;
+        width: 54mm;
+        height: 60mm;
+        border-radius: 8mm;
+        padding: 1.6mm;
+        background: linear-gradient(135deg, #4fc3f7, #1e9be8 35%, #0b3d91);
+        z-index: 3;
+        box-shadow: 0 3mm 8mm rgba(11, 61, 145, 0.35);
+      }
+      .sp-photo .in {
+        width: 100%;
+        height: 100%;
+        border-radius: 6.6mm;
+        overflow: hidden;
+        border: 0.9mm solid #fff;
+        background: #dfe7f1;
+      }
+      .sp-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+      }
+      .sp-title {
+        top: 27mm;
+        right: 80mm;
+        left: 14mm;
+        height: 20mm;
+        line-height: 20mm;
+      }
+      .sp-title .t {
+        font-family: 'Cairo', sans-serif;
+        font-weight: 900;
+        font-size: 21pt;
+        color: #0b3d91;
+        vertical-align: middle;
+      }
+      .sp-title .deco-line {
+        width: 11mm;
+        margin: 0 3mm;
+      }
+      .sp-title-acc {
+        top: 31mm;
+        left: 10mm;
+        width: 30mm;
+        height: 20mm;
+        transform: skewX(-18deg);
+      }
+      .sp-name-line {
+        position: absolute;
+        top: 62mm;
+        right: 76mm;
+        left: 14mm;
+        height: 0.45mm;
+        background: linear-gradient(90deg, rgba(79, 195, 247, 0), #4fc3f7 30%, #1565c0 70%, rgba(21, 101, 192, 0));
+      }
+      .sp-name {
+        position: absolute;
+        top: 55.5mm;
+        right: 90mm;
+        left: 26mm;
+        height: 13mm;
+        line-height: 13mm;
+        border-radius: 6.5mm;
+        background: linear-gradient(90deg, #0b3d91, #1565c0 45%, #1e9be8);
+        color: #fff;
+        text-align: center;
+        font-weight: 800;
+        font-size: 15pt;
+        box-shadow: 0 2mm 5mm rgba(11, 61, 145, 0.3);
+        border: 0.5mm solid rgba(255, 255, 255, 0.7);
+      }
+      .sp-card {
+        position: absolute;
+        top: 87mm;
+        left: 12mm;
+        right: 12mm;
+        bottom: 22mm;
+        background: #fff;
+        border: 0.4mm solid #4fc3f7;
+        border-radius: 8mm;
+        box-shadow: 0 3mm 9mm rgba(11, 61, 145, 0.12);
+        padding: 8.5mm 10mm 7mm;
+        z-index: 2;
+      }
+      .qmark {
+        position: absolute;
+        width: 13mm;
+        height: 13mm;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #1e9be8, #0b3d91);
+        color: #fff;
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-weight: 700;
+        font-size: 30pt;
+        line-height: 17mm;
+        box-shadow: 0 1.5mm 4mm rgba(11, 61, 145, 0.35);
+        border: 0.8mm solid #fff;
+      }
+      .qmark.tl {
+        top: -6.5mm;
+        left: 12mm;
+      }
+      .qmark.br {
+        bottom: -6.5mm;
+        right: 12mm;
+      }
+      .basmala {
+        font-family: 'Amiri', serif;
+        font-size: 13pt;
+        color: #0b3d91;
+        text-align: center;
+        line-height: 1.4;
+        font-weight: 700;
+      }
+      .verse {
+        font-family: 'Amiri', serif;
+        font-size: 11.5pt;
+        color: #1565c0;
+        text-align: center;
+        line-height: 1.45;
+        font-weight: 700;
+      }
+      .sadaq {
+        font-family: 'Amiri', serif;
+        font-size: 9pt;
+        color: #6a7d99;
+        text-align: center;
+        line-height: 1.4;
+        margin-bottom: 2.6mm;
+      }
+      .sp-body p {
+              font-size: 10.8pt;
+              line-height: 1.78;
+        color: #1a2b4a;
+        text-align: right;
+        text-wrap: pretty;
+        text-indent: 4mm;
+        margin-bottom: 1mm;
+        font-weight: 500;
+      }
+      .sp-body p.first {
+        font-weight: 500;
+      }
+      .closing {
+        font-family: 'Amiri', serif;
+        font-weight: 700;
+        font-size: 17pt;
+        color: #1565c0;
+        text-align: center;
+        margin-top: 2.5mm;
+        line-height: 1.3;
+      }
+
+      /* ======== COMMITTEES ======== */
+      .cm-title {
+        position: absolute;
+        top: 41mm;
+        left: 0;
+        right: 0;
+        text-align: center;
+        line-height: 1.3;
+      }
+      .cm-title .t {
+        font-family: 'Cairo', sans-serif;
+        font-weight: 900;
+        font-size: 23pt;
+        color: #0b3d91;
+        vertical-align: middle;
+      }
+      .cm-sub {
+        position: absolute;
+        top: 55mm;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-family: 'Cairo', sans-serif;
+        font-weight: 800;
+        font-size: 13pt;
+        color: #1565c0;
+      }
+      .cm-info {
+        position: absolute;
+        top: 65mm;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 10.5pt;
+        font-weight: 800;
+        color: #0b3d91;
+      }
+      .cm-info svg {
+        width: 5mm;
+        height: 5mm;
+        vertical-align: -1.2mm;
+        color: #1565c0;
+        margin-left: 1.5mm;
+      }
+      .cm-info svg.red {
+        color: #d32f2f;
+      }
+      .cm-info .bar {
+        display: inline-block;
+        width: 0.35mm;
+        height: 5mm;
+        background: #9ab4d4;
+        vertical-align: middle;
+        margin: 0 5mm;
+      }
+      .lead-label {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 52mm;
+        height: 8.5mm;
+        line-height: 8.5mm;
+        border-radius: 4.25mm;
+        background: linear-gradient(90deg, #0b3d91, #1565c0 50%, #1e9be8);
+        color: #fff;
+        text-align: center;
+        font-weight: 800;
+        font-size: 10.5pt;
+        z-index: 3;
+        box-shadow: 0 1.5mm 4mm rgba(11, 61, 145, 0.3);
+      }
+      .lead-label svg {
+        width: 4.2mm;
+        height: 4.2mm;
+        vertical-align: -0.8mm;
+        margin-left: 1.5mm;
+      }
+      .lead-card {
+        position: absolute;
+        left: 40mm;
+        right: 40mm;
+        height: 17mm;
+        line-height: 18.5mm;
+        text-align: center;
+        background: #fff;
+        border-radius: 8.5mm;
+        border: 0.4mm solid #bfe3fa;
+        box-shadow: 0 2mm 6mm rgba(11, 61, 145, 0.14);
+        font-family: 'Cairo', sans-serif;
+        font-weight: 900;
+        color: #0b3d91;
+        z-index: 2;
+      }
+      .lead-card::before,
+      .lead-card::after {
+        content: '';
+        position: absolute;
+        top: 8.3mm;
+        width: 22mm;
+        height: 0.45mm;
+      }
+      .lead-card::before {
+        right: -26mm;
+        background: linear-gradient(90deg, #1565c0, rgba(79, 195, 247, 0));
+      }
+      .lead-card::after {
+        left: -26mm;
+        background: linear-gradient(90deg, rgba(79, 195, 247, 0), #1565c0);
+      }
+      .cm-card {
+        position: absolute;
+        width: 58mm;
+        background: #fff;
+        border-radius: 5mm;
+        border: 0.35mm solid #cde7f9;
+        box-shadow: 0 2mm 6mm rgba(11, 61, 145, 0.12);
+        overflow: hidden;
+      }
+      .cm-card .hd {
+        height: 10.5mm;
+        line-height: 10.5mm;
+        padding-right: 4mm;
+        background: linear-gradient(90deg, #0b3d91, #1565c0 55%, #1e9be8);
+        color: #fff;
+        font-weight: 800;
+        font-size: 11pt;
+        position: relative;
+      }
+      .cm-card .hd svg {
+        position: absolute;
+        left: 3.5mm;
+        top: 2.5mm;
+        width: 5.5mm;
+        height: 5.5mm;
+        color: #fff;
+      }
+      .cm-card ul {
+        list-style: none;
+        padding: 2.8mm 4mm 2mm 3mm;
+      }
+      .cm-card li {
+        font-size: 9.6pt;
+        line-height: 1.55;
+        font-weight: 700;
+        color: #22365a;
+        position: relative;
+        padding-right: 3mm;
+      }
+      .cm-card li::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 2.1mm;
+        width: 1.3mm;
+        height: 1.3mm;
+        border-radius: 50%;
+        background: #4fc3f7;
+      }
+      .cm-card li.chief {
+        color: #0b3d91;
+        font-weight: 900;
+      }
+      .cm-card li.chief::before {
+        background: #d32f2f;
+      }
+      .chip {
+        display: inline-block;
+        font-size: 7pt;
+        font-weight: 800;
+        color: #fff;
+        background: linear-gradient(90deg, #1565c0, #1e9be8);
+        border-radius: 2mm;
+        padding: 0 1.6mm;
+        line-height: 3.8mm;
+        margin-right: 1mm;
+        vertical-align: 0.2mm;
+      }
+
+      /* ======== ADS ======== */
+      .ad-title {
+        top: 36mm;
+        left: 50mm;
+        right: 50mm;
+        height: 22mm;
+        line-height: 22mm;
+      }
+      .ad-title .t {
+        font-family: 'Cairo', sans-serif;
+        font-weight: 900;
+        font-size: 25pt;
+        color: #0b3d91;
+        vertical-align: middle;
+      }
+      .ad-acc {
+        top: 41mm;
+        left: 44mm;
+        width: 30mm;
+        height: 21mm;
+        transform: skewX(-18deg);
+      }
+      .ad-sub {
+        position: absolute;
+        top: 61mm;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-weight: 800;
+        font-size: 12pt;
+        color: #1565c0;
+      }
+      .ad {
+        position: absolute;
+        border: 0.55mm dashed #4fc3f7;
+        border-radius: 5mm;
+        background: rgba(255, 255, 255, 0.7);
+      }
+      .ad .c {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+      }
+      .ad .c .a {
+        font-family: 'Cairo', sans-serif;
+        font-weight: 800;
+        color: #9db6d3;
+      }
+      .ad .c .d {
+        color: #b1c3d9;
+        font-weight: 700;
+        margin-top: 0.5mm;
+      }
+      .ad .corner {
+        position: absolute;
+        width: 6mm;
+        height: 6mm;
+        border-color: #1e9be8;
+        border-style: solid;
+      }
+      .ad .corner.tr {
+        top: 2mm;
+        right: 2mm;
+        border-width: 0.7mm 0.7mm 0 0;
+        border-top-right-radius: 2mm;
+      }
+      .ad .corner.bl {
+        bottom: 2mm;
+        left: 2mm;
+        border-width: 0 0 0.7mm 0.7mm;
+        border-bottom-left-radius: 2mm;
+      }
+      .thanks {
+        position: absolute;
+        top: 238mm;
+        left: 14mm;
+        right: 14mm;
+        height: 20mm;
+        background: #fff;
+        border-radius: 6mm;
+        border: 0.35mm solid #cde7f9;
+        box-shadow: 0 2mm 6mm rgba(11, 61, 145, 0.12);
+        text-align: center;
+        padding-top: 2.6mm;
+      }
+      .thanks .h {
+        font-family: 'Cairo', sans-serif;
+        font-weight: 900;
+        font-size: 11pt;
+        color: #0b3d91;
+        line-height: 1.4;
+      }
+      .thanks .h i {
+        color: #d32f2f;
+        font-style: normal;
+      }
+      .thanks .l {
+        font-size: 9.5pt;
+        font-weight: 700;
+        color: #1565c0;
+        margin-top: 1mm;
+      }
+      .thanks .l .dot {
+        display: inline-block;
+        width: 1.4mm;
+        height: 1.4mm;
+        border-radius: 50%;
+        background: #4fc3f7;
+        vertical-align: middle;
+        margin: 0 2.5mm;
+      }
+      .end-band {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 36mm;
+        display: block;
+      }
+      .end-foot {
+        position: absolute;
+        bottom: 5mm;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #fff;
+        z-index: 5;
+      }
+      .end-foot .lg {
+        display: inline-block;
+        width: 12mm;
+        height: 12mm;
+        border-radius: 50%;
+        background: #fff;
+        padding: 0.6mm;
+        vertical-align: middle;
+        box-shadow: 0 1mm 3mm rgba(0, 0, 0, 0.25);
+      }
+      .end-foot .lg img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 50%;
+        display: block;
+      }
+      .end-foot .tx {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 3mm;
+        font-weight: 800;
+        font-size: 9.5pt;
+      }
+      .end-foot .num {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 3mm;
+        background: #fff;
+        color: #0b3d91;
+        font-family: 'Cairo', sans-serif;
+        font-weight: 900;
+        border-radius: 3mm;
+        padding: 0 2.6mm;
+        line-height: 5.6mm;
+        font-size: 9pt;
+      }
+    </style>
+  </head>
+  <body>
+    <template id="__bundler_thumbnail"
+      >مجلة المؤتمر العلمي الثامن لجراحة التجميل والترميم والحروق — الحديدة، اليمن، 11-12 نوفمبر 2026م.</template
+    >
+
+    <!-- ================= PAGE 1 : COVER ================= -->
+    <section class="page cover">
+      <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+        <defs>
+          <linearGradient id="gDeep" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#0B3D91" />
+            <stop offset=".55" stop-color="#1565C0" />
+            <stop offset="1" stop-color="#1E9BE8" />
+          </linearGradient>
+          <linearGradient id="gDeepV" x1="0" y1="0" x2="0.4" y2="1">
+            <stop offset="0" stop-color="#082F72" />
+            <stop offset=".45" stop-color="#0B3D91" />
+            <stop offset=".8" stop-color="#1565C0" />
+            <stop offset="1" stop-color="#1E9BE8" />
+          </linearGradient>
+          <linearGradient id="gSky" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1E9BE8" />
+            <stop offset="1" stop-color="#4FC3F7" />
+          </linearGradient>
+          <linearGradient id="gGloss" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff" stop-opacity=".22" />
+            <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <svg class="top-svg" viewBox="0 0 210 172" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 H210 V138 C178,160 140,128 104,142 C66,157 30,160 0,150 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,0 H210 V128 C176,150 140,116 102,132 C64,148 30,150 0,140 Z" fill="url(#gDeepV)" />
+        <path d="M0,0 H210 V60 C160,80 110,40 60,58 C35,66 15,70 0,66 Z" fill="url(#gGloss)" />
+        <circle cx="180" cy="40" r="46" fill="#ffffff" opacity=".05" />
+        <circle cx="28" cy="96" r="34" fill="#ffffff" opacity=".04" />
+        <path
+          d="M0,146 C30,156 66,152 104,138 C140,124 176,156 210,134"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="1.4"
+          vector-effect="non-scaling-stroke"
+          opacity=".85"
+        />
+        <path
+          d="M0,152 C34,162 70,158 106,145 C142,132 178,162 210,142"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width=".8"
+          vector-effect="non-scaling-stroke"
+          opacity=".45"
+        />
+      </svg>
+
+      <div class="logo-circle" style="top: 13mm; right: 24mm; width: 42mm; height: 42mm">
+        <img src="images/logo-association.png" alt="شعار الجمعية" />
+      </div>
+      <div class="logo-circle" style="top: 10mm; left: 0; right: 0; margin: 0 auto; width: 48mm; height: 48mm">
+        <img src="images/logo-conference.png" alt="شعار المؤتمر" />
+      </div>
+      <div class="logo-circle pad" style="top: 13mm; left: 24mm; width: 42mm; height: 42mm">
+        <img src="images/logo-8th.png" alt="8th" />
+      </div>
+
+      <div class="issue">
+        <span>العدد الخاص <b>·</b> Special Issue 2026</span>
+      </div>
+      <div class="assoc-line">جمعية جراحي التجميل والترميم والحروق اليمنية</div>
+
+      <div class="collage">
+        <div class="ph" style="left: 2mm; top: 6mm; width: 42mm; height: 52mm">
+          <img src="images/hall-7.jpg" alt="" />
+        </div>
+        <div class="ph" style="left: 48mm; top: 4mm; width: 42mm; height: 56mm">
+          <img src="images/hall-4.jpg" alt="" />
+        </div>
+        <div class="ph" style="left: 94mm; top: 0; width: 44mm; height: 64mm; z-index: 2">
+          <img src="images/hall-1.jpg" alt="" />
+        </div>
+        <div class="ph" style="left: 142mm; top: 4mm; width: 42mm; height: 56mm">
+          <img src="images/hall-2.jpg" alt="" />
+        </div>
+        <div class="ph" style="left: 188mm; top: 6mm; width: 42mm; height: 52mm">
+          <img src="images/hall-3.jpg" alt="" />
+        </div>
+      </div>
+
+      <div class="ctext">
+        <h1>المؤتمر العلمي الثامن</h1>
+        <h2>لجراحة التجميل والترميم والحروق</h2>
+        <div class="en">The 8th Scientific Conference of Plastic,<br />Reconstructive and Burns Surgery</div>
+        <div class="divider"><i class="a"></i><i class="b"></i><i class="c"></i></div>
+        <div class="slogan">نحو جراحة تجميلية آمنة ومستدامة</div>
+        <div class="slogan-en">Towards Safe and Sustainable Aesthetic Surgery</div>
+        <div class="badge">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" /></svg
+          >11 - 12 نوفمبر 2026م<span class="bar"></span
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z" />
+            <circle cx="12" cy="10" r="2.5" /></svg
+          >الحديدة - اليمن
+        </div>
+      </div>
+
+      <svg class="wave-bottom" style="height: 18mm" viewBox="0 0 210 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,40 V14 C35,2 70,24 110,16 C150,8 180,4 210,16 V40 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,40 V22 C35,10 72,32 112,24 C152,16 182,12 210,24 V40 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,19 C35,7 72,28 110,20 C150,12 182,8 210,20"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.2"
+          vector-effect="non-scaling-stroke"
+          opacity=".8"
+        />
+      </svg>
+    </section>
+
+    <!-- ================= PAGE 2 : IDENTITY ================= -->
+    <section class="page ident">
+      <div class="bg-soft"></div>
+      <svg
+        class="wave-svg"
+        style="top: 0; height: 112mm"
+        viewBox="0 0 210 112"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path d="M0,0 H210 V92 C176,108 136,80 98,92 C60,104 28,108 0,98 Z" fill="url(#gSky)" opacity=".5" />
+        <path d="M0,0 H210 V82 C174,98 136,68 98,82 C60,96 28,98 0,88 Z" fill="url(#gDeepV)" />
+        <path d="M0,0 H210 V36 C160,52 110,20 60,36 C35,44 15,46 0,42 Z" fill="url(#gGloss)" />
+        <path
+          d="M0,94 C30,104 62,100 98,86 C136,72 176,104 210,88"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.4"
+          vector-effect="non-scaling-stroke"
+          opacity=".85"
+        />
+        <path
+          d="M0,100 C32,110 66,106 100,93 C138,80 178,110 210,95"
+          fill="none"
+          stroke="#fff"
+          stroke-width=".8"
+          vector-effect="non-scaling-stroke"
+          opacity=".4"
+        />
+      </svg>
+      <div class="ph" style="top: 20mm; left: 9mm; width: 118mm; height: 48mm; transform: rotate(-3deg)">
+        <img src="images/hall-6.jpg" alt="" />
+      </div>
+      <div class="ph" style="top: 38mm; right: 9mm; width: 80mm; height: 52mm; transform: rotate(3deg); z-index: 2">
+        <img src="images/hall-5.jpg" alt="" />
+      </div>
+
+      <div class="halo"></div>
+      <div class="ring two"></div>
+      <div class="ring"></div>
+      <img class="big8" src="images/logo-8th.png" alt="شعار المؤتمر الثامن" />
+
+      <div class="tagline">
+        <div class="ar">جمعية جراحي التجميل والترميم والحروق اليمنية</div>
+        <div class="en">Yemeni Association of Plastic, Reconstructive and Burns Surgeons</div>
+      </div>
+
+      <svg class="wave-bottom" viewBox="0 0 210 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,40 V12 C35,0 70,22 110,14 C150,6 180,2 210,14 V40 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,40 V20 C35,8 72,30 112,22 C152,14 182,10 210,22 V40 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,17 C35,5 72,26 110,18 C150,10 182,6 210,18"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.2"
+          vector-effect="non-scaling-stroke"
+          opacity=".8"
+        />
+      </svg>
+      <div class="foot">المؤتمر العلمي الثامن 2026<span class="sep"></span><span class="num">02</span></div>
+    </section>
+
+    <!-- ================= PAGE 3 : TOC ================= -->
+    <section class="page">
+      <div class="bg-soft"></div>
+      <svg class="wave-top" viewBox="0 0 210 50" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 H210 V40 C175,50 140,22 100,30 C60,38 30,48 0,36 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,0 H210 V30 C178,40 140,14 100,22 C62,30 28,40 0,28 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,32 C30,44 62,34 100,26 C140,18 178,44 210,34"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.3"
+          vector-effect="non-scaling-stroke"
+          opacity=".85"
+        />
+        <path
+          d="M0,37 C32,48 64,39 102,31 C142,23 178,49 210,39"
+          fill="none"
+          stroke="#fff"
+          stroke-width=".7"
+          vector-effect="non-scaling-stroke"
+          opacity=".4"
+        />
+      </svg>
+
+      <div class="cap-accent toc-accent"></div>
+      <div class="cap-accent toc-accent r"></div>
+      <div class="capsule toc-title">
+        <span class="deco-line"></span><span class="t">جدول المحتويات</span><span class="deco-line r"></span>
+      </div>
+
+      <div class="toc-item" style="top: 90mm">
+        <span class="n">01</span><span class="ttl">مقدمة</span><span class="lead"></span><span class="pg">04</span>
+      </div>
+      <div class="toc-item" style="top: 115mm">
+        <span class="n">02</span><span class="ttl">كلمة رئيس المؤتمر</span><span class="lead"></span
+        ><span class="pg">05</span>
+      </div>
+      <div class="toc-item" style="top: 140mm">
+        <span class="n">03</span><span class="ttl">لجان المؤتمر العلمي الثامن</span><span class="lead"></span
+        ><span class="pg">06</span>
+      </div>
+      <div class="toc-item" style="top: 165mm">
+        <span class="n">04</span><span class="ttl">كلمة رئيس الجمعية</span><span class="lead"></span
+        ><span class="pg">07</span>
+      </div>
+      <div class="toc-item" style="top: 190mm">
+        <span class="n">05</span><span class="ttl">كلمة أمين عام الجمعية</span><span class="lead"></span
+        ><span class="pg">08</span>
+      </div>
+      <div class="toc-item" style="top: 215mm">
+        <span class="n">06</span><span class="ttl">الإعلانات</span><span class="lead"></span><span class="pg">09</span>
+      </div>
+
+      <svg class="wave-bottom" viewBox="0 0 210 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,40 V12 C35,0 70,22 110,14 C150,6 180,2 210,14 V40 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,40 V20 C35,8 72,30 112,22 C152,14 182,10 210,22 V40 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,17 C35,5 72,26 110,18 C150,10 182,6 210,18"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.2"
+          vector-effect="non-scaling-stroke"
+          opacity=".8"
+        />
+      </svg>
+      <div class="foot">المؤتمر العلمي الثامن 2026<span class="sep"></span><span class="num">03</span></div>
+    </section>
+
+    <!-- ================= PAGE 4 : INTRO ================= -->
+    <section class="page">
+      <div class="bg-soft"></div>
+      <svg class="wave-top" viewBox="0 0 210 50" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 H210 V40 C175,50 140,22 100,30 C60,38 30,48 0,36 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,0 H210 V30 C178,40 140,14 100,22 C62,30 28,40 0,28 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,32 C30,44 62,34 100,26 C140,18 178,44 210,34"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.3"
+          vector-effect="non-scaling-stroke"
+          opacity=".85"
+        />
+      </svg>
+
+      <div class="logo-circle" style="top: 44mm; right: 55mm; width: 44mm; height: 44mm">
+        <img src="images/logo-conference.png" alt="شعار المؤتمر" />
+      </div>
+      <div class="logo-circle" style="top: 44mm; left: 55mm; width: 44mm; height: 44mm">
+        <img src="images/logo-association.png" alt="شعار الجمعية" />
+      </div>
+
+      <div class="welcome-band"></div>
+      <div class="welcome-card">
+        <div class="l1">ترحب بكم جمعية جراحي التجميل<br />والترميم والحروق اليمنية</div>
+        <div class="l2">المؤتمر العلمي الثامن</div>
+        <div class="l3">لجراحة التجميل والترميم والحروق</div>
+        <div class="mini"></div>
+      </div>
+
+      <div class="info-box" style="right: 18mm">
+        <div class="ic">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+        </div>
+        <div class="lbl">التاريخ</div>
+        <div class="val">11 - 12 نوفمبر<br />2026م</div>
+      </div>
+      <div class="info-box" style="right: 79mm">
+        <div class="ic">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z" />
+            <circle cx="12" cy="10" r="2.5" />
+          </svg>
+        </div>
+        <div class="lbl">المكان</div>
+        <div class="val">الحديدة<br />الجمهورية اليمنية</div>
+      </div>
+      <div class="info-box" style="left: 18mm">
+        <div class="ic">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z" />
+            <path d="M9 12l2 2 4-4" />
+          </svg>
+        </div>
+        <div class="lbl">شعار المؤتمر</div>
+        <div class="val">نحو جراحة تجميلية<br />آمنة ومستدامة</div>
+      </div>
+
+      <svg class="wave-bottom" viewBox="0 0 210 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,40 V12 C35,0 70,22 110,14 C150,6 180,2 210,14 V40 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,40 V20 C35,8 72,30 112,22 C152,14 182,10 210,22 V40 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,17 C35,5 72,26 110,18 C150,10 182,6 210,18"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.2"
+          vector-effect="non-scaling-stroke"
+          opacity=".8"
+        />
+      </svg>
+      <div class="foot">المؤتمر العلمي الثامن 2026<span class="sep"></span><span class="num">04</span></div>
+    </section>
+
+    <!-- ================= PAGE 5 : CONFERENCE PRESIDENT ================= -->
+    <section class="page">
+      <div class="bg-soft"></div>
+      <svg class="wave-top" viewBox="0 0 210 50" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 H210 V40 C175,50 140,22 100,30 C60,38 30,48 0,36 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,0 H210 V30 C178,40 140,14 100,22 C62,30 28,40 0,28 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,32 C30,44 62,34 100,26 C140,18 178,44 210,34"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.3"
+          vector-effect="non-scaling-stroke"
+          opacity=".85"
+        />
+      </svg>
+
+      <div class="sp-photo-accent"></div>
+      <div class="sp-photo">
+        <div class="in"><img src="images/dr-jamila-alsanabani.jpg" alt="أ.د/ جميلة علي السنباني" /></div>
+      </div>
+      <div class="cap-accent sp-title-acc"></div>
+      <div class="capsule sp-title">
+        <span class="deco-line"></span><span class="t">كلمة رئيس المؤتمر</span><span class="deco-line r"></span>
+      </div>
+      <div class="sp-name-line"></div>
+      <div class="sp-name">أ.د/ جميلة علي السنباني</div>
+
+      <div class="sp-card">
+        <div class="qmark tl">”</div>
+        <div class="basmala">بسم الله الرحمن الرحيم</div>
+        <div class="verse">(وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ وَرَسُولُهُ وَالْمُؤْمِنُونَ)</div>
+        <div class="sadaq">صدق الله العظيم</div>
+        <div class="sp-body">
+          <p>
+            في رحاب المؤتمر العلمي الثامن لجراحة التجميل والترميم والحروق الذي تنظمه جمعية جراحي التجميل والترميم
+            والحروق يسعدنا أن تنطلق أعماله هذا العام بالتزامن مع الأسبوع العالمي للوقاية من الحروق.
+          </p>
+          <p>
+            إن تزامن مؤتمرنا مع هذه المناسبة العالمية يضع على عاتقنا مسؤولية مضاعفة؛ فهو يذكرنا دائماً بأن مهمتنا لا تقف
+            عند حدود غرفة العمليات وتقديم أحدث الحلول الترميمية والتقنيات التجميلية، بل تمتد لتشمل الوقاية، ورفع الوعي
+            المجتمعي، وتوفير الرعاية المتكاملة الطبية والنفسية والوظيفية لمصابي الحروق والتحديات الترميمية المعقدة.
+          </p>
+          <p>
+            لقد قطع تخصص جراحة التجميل والترميم شوطاً كبيراً في التطور والابتكار، وأصبحت مجالات مثل الجراحة المجهرية
+            الدقيقة، زراعة الأنسجة وإعادة بناء التشوهات تُحدث فارقاً جوهرياً في حياة المرضى.
+          </p>
+          <p>
+            ومن هنا، حرصنا في النسخة الثامنة لهذا المؤتمر على أن تكون المحاور والأوراق البحثية المطروحة ملامسة لأحدث ما
+            توصل إليه العلم، بمشاركة نخبة متميزة من الخبراء والعلماء والباحثين من مختلف المؤسسات الطبية.
+          </p>
+          <p>
+            إن هذه المجلة العلمية الصادرة عن المؤتمر تُعد وثيقة مرجعية تعكس حجم الجهد العلمي والميداني المبذول، وتهدف
+            إلى نقل الخبرات والتجارب التطبيقية للأجيال الشابة من الأطباء والجراحين، بما يضمن استدامة التطوير ورفع جودة
+            الخدمات الصحية المقدمة لمجتمعاتنا.
+          </p>
+          <p>
+            ختاماً، أتوجه بجزيل الشكر والامتنان لوزارة الصحة والسكان والمجلس الطبي على دعمهم لنا في هذه المناسبة الرفيعة
+            وكذلك الشكر والعرفان للجان المؤتمر التي أعدت ونظمت هذا الحدث العلمي المتميز، ولجميع الباحثين والمتحدثين
+            الذين أثروا برنامجنا ببحوثهم وتجاربهم. الشكر موصول للشركات الداعمة والمركز الوطني للحروق على دعمهم المستمر
+            ولكل من أسهم في الإعداد لهذا المؤتمر لإنجاحه.
+          </p>
+          <p>
+            أتمنى لكم جميعاً مؤتمراً موفقاً وجلسات علمية مثمرة تُسهم في رسم آفاق جديدة لتخصصنا، والخروج بتوصيات ومقترحات
+            هامةً وذو قيمة، تساهم في تطوير جراحة التجميل والترميم والحروق وتحقق أعلى مستويات الرعاية الصحية في المستقبل.
+          </p>
+        </div>
+        <div class="closing">والله ولي التوفيق</div>
+        <div class="qmark br">“</div>
+      </div>
+
+      <svg class="wave-bottom" viewBox="0 0 210 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,40 V12 C35,0 70,22 110,14 C150,6 180,2 210,14 V40 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,40 V20 C35,8 72,30 112,22 C152,14 182,10 210,22 V40 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,17 C35,5 72,26 110,18 C150,10 182,6 210,18"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.2"
+          vector-effect="non-scaling-stroke"
+          opacity=".8"
+        />
+      </svg>
+      <div class="foot">المؤتمر العلمي الثامن 2026<span class="sep"></span><span class="num">05</span></div>
+    </section>
+
+    <!-- ================= PAGE 6 : COMMITTEES ================= -->
+    <section class="page">
+      <div class="bg-soft"></div>
+      <svg class="wave-top" style="height: 32mm" viewBox="0 0 210 50" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 H210 V40 C175,50 140,22 100,30 C60,38 30,48 0,36 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,0 H210 V30 C178,40 140,14 100,22 C62,30 28,40 0,28 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,32 C30,44 62,34 100,26 C140,18 178,44 210,34"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.3"
+          vector-effect="non-scaling-stroke"
+          opacity=".85"
+        />
+      </svg>
+
+      <div class="logo-circle" style="top: 9mm; right: 74mm; width: 28mm; height: 28mm">
+        <img src="images/logo-conference.png" alt="" />
+      </div>
+      <div class="logo-circle" style="top: 9mm; left: 74mm; width: 28mm; height: 28mm">
+        <img src="images/logo-association.png" alt="" />
+      </div>
+
+      <div class="cm-title">
+        <span class="deco-line"></span><span class="t">اللجان الخاصة بالمؤتمر</span><span class="deco-line r"></span>
+      </div>
+      <div class="cm-sub">المؤتمر العلمي الثامن لجراحة التجميل والترميم والحروق</div>
+      <div class="cm-info">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="3" y="4" width="18" height="18" rx="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" /></svg
+        >التاريخ: 11 - 12 / نوفمبر / 2026 م<span class="bar"></span
+        ><svg
+          class="red"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z" />
+          <circle cx="12" cy="10" r="2.5" /></svg
+        >المكان: الحديدة
+      </div>
+
+      <div class="lead-label" style="top: 76mm">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 21v-1a8 8 0 0 1 16 0v1" /></svg
+        >رئيس المؤتمر
+      </div>
+      <div class="lead-card" style="top: 80.5mm; font-size: 19pt">أ.د جميلة السنباني</div>
+
+      <div class="lead-label" style="top: 102mm">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 21v-1a8 8 0 0 1 16 0v1" /></svg
+        >نائب رئيس المؤتمر
+      </div>
+      <div class="lead-card" style="top: 106.5mm; font-size: 17pt; left: 50mm; right: 50mm">عادل قطقط</div>
+
+      <!-- Row 1 -->
+      <div class="cm-card" style="top: 131mm; right: 13mm; height: 60mm">
+        <div class="hd">
+          اللجنة التحضيرية<svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
+            />
+          </svg>
+        </div>
+        <ul>
+          <li class="chief">د. صلاح المحبشي<span class="chip">رئيساً</span></li>
+          <li>د. عبدالمجيد اليافعي</li>
+          <li>د. محمد الحجاجي</li>
+          <li>د. يوسف الشرعبي</li>
+          <li>د. غالب الجاحمي</li>
+          <li>د. معاذ منصور</li>
+          <li>د. معاذ الصيرفي</li>
+        </ul>
+      </div>
+      <div class="cm-card" style="top: 131mm; right: 76mm; height: 60mm">
+        <div class="hd">
+          اللجنة العلمية<svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 18h8" />
+            <path d="M3 22h18" />
+            <path d="M14 22a7 7 0 1 0 0-14h-1" />
+            <path d="M9 14h2" />
+            <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z" />
+            <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3" />
+          </svg>
+        </div>
+        <ul>
+          <li class="chief">أ.د بشير عثمان<span class="chip">رئيساً</span></li>
+          <li>أ.د محمد السعيدي</li>
+          <li>أ.د أحمد العماري</li>
+          <li>د. أحمد الجمرة</li>
+          <li>د. جهاد المرتضى</li>
+        </ul>
+      </div>
+      <div class="cm-card" style="top: 131mm; right: 139mm; height: 60mm">
+        <div class="hd">
+          اللجنة التنظيمية<svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="9" cy="8" r="3.5" />
+            <path d="M2 21v-1a6 6 0 0 1 12 0v1" />
+            <circle cx="17" cy="9" r="2.5" />
+            <path d="M16 14.5a5 5 0 0 1 6 4.9V21" />
+          </svg>
+        </div>
+        <ul>
+          <li class="chief">أ.د محمد الشرجبي<span class="chip">رئيساً</span></li>
+          <li>أ.د يحيى السياغي</li>
+          <li>أ.د نصر القدسي</li>
+          <li>د. فيصل عبدالعزيز</li>
+          <li>د. عبدالمجيد الدهمي</li>
+        </ul>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="cm-card" style="top: 198mm; right: 13mm; height: 52mm">
+        <div class="hd">
+          اللجنة المالية<svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <ellipse cx="12" cy="6" rx="7" ry="3" />
+            <path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6" />
+            <path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" />
+          </svg>
+        </div>
+        <ul>
+          <li class="chief">أ.د مهند العجلي<span class="chip">رئيساً</span></li>
+          <li>د. عبدالمجيد السالمي</li>
+          <li>د. جمال مطهر</li>
+          <li>د. نسمة القرشي</li>
+        </ul>
+      </div>
+      <div class="cm-card" style="top: 198mm; right: 76mm; height: 52mm">
+        <div class="hd">
+          لجنة العلاقات العامة<svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z" />
+            <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z" />
+          </svg>
+        </div>
+        <ul>
+          <li class="chief">د. عبدالقادر المصباحي<span class="chip">رئيساً</span></li>
+          <li>د. أيمن غانم</li>
+          <li>د. شيماء المحبشي</li>
+          <li>د. أروى العودي</li>
+        </ul>
+      </div>
+      <div class="cm-card" style="top: 198mm; right: 139mm; height: 52mm">
+        <div class="hd">
+          اللجنة الإعلامية<svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1z" />
+            <path d="M16 8a5 5 0 0 1 0 8" />
+            <path d="M19 5a9 9 0 0 1 0 14" />
+          </svg>
+        </div>
+        <ul>
+          <li class="chief">د. عائشة جياش<span class="chip">رئيساً</span></li>
+          <li>د. حنان الشاحذي</li>
+          <li>د. عبدالرحمن اليحيري</li>
+          <li>د. نقيبة شريان</li>
+        </ul>
+      </div>
+
+      <svg class="wave-bottom" viewBox="0 0 210 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,40 V12 C35,0 70,22 110,14 C150,6 180,2 210,14 V40 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,40 V20 C35,8 72,30 112,22 C152,14 182,10 210,22 V40 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,17 C35,5 72,26 110,18 C150,10 182,6 210,18"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.2"
+          vector-effect="non-scaling-stroke"
+          opacity=".8"
+        />
+      </svg>
+      <div class="foot">المؤتمر العلمي الثامن 2026<span class="sep"></span><span class="num">06</span></div>
+    </section>
+
+    <!-- ================= PAGE 7 : ASSOCIATION PRESIDENT ================= -->
+    <section class="page">
+      <div class="bg-soft"></div>
+      <svg class="wave-top" viewBox="0 0 210 50" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 H210 V40 C175,50 140,22 100,30 C60,38 30,48 0,36 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,0 H210 V30 C178,40 140,14 100,22 C62,30 28,40 0,28 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,32 C30,44 62,34 100,26 C140,18 178,44 210,34"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.3"
+          vector-effect="non-scaling-stroke"
+          opacity=".85"
+        />
+      </svg>
+
+      <div class="sp-photo-accent"></div>
+      <div class="sp-photo">
+        <div class="in"><img src="images/dr-yahya-alsayaghi.jpg" alt="أ.د/ يحيى احمد الصياغي" /></div>
+      </div>
+      <div class="cap-accent sp-title-acc"></div>
+      <div class="capsule sp-title">
+        <span class="deco-line"></span><span class="t">كلمة رئيس الجمعية</span><span class="deco-line r"></span>
+      </div>
+      <div class="sp-name-line"></div>
+      <div class="sp-name">أ.د/ يحيى احمد الصياغي</div>
+
+      <div class="sp-card">
+        <div class="qmark tl">”</div>
+        <div class="basmala">بسم الله الرحمن الرحيم</div>
+        <div class="verse">(وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ وَرَسُولُهُ وَالْمُؤْمِنُونَ)</div>
+        <div class="sadaq">صدق الله العظيم</div>
+        <div class="sp-body">
+          <p>
+            في رحاب المؤتمر العلمي الثامن لجراحة التجميل والترميم والحروق الذي تنظمه جمعية جراحي التجميل والترميم
+            والحروق يسعدنا أن تنطلق أعماله هذا العام بالتزامن مع الأسبوع العالمي للوقاية من الحروق.
+          </p>
+          <p>
+            إن تزامن مؤتمرنا مع هذه المناسبة العالمية يضع على عاتقنا مسؤولية مضاعفة؛ فهو يذكرنا دائماً بأن مهمتنا لا تقف
+            عند حدود غرفة العمليات وتقديم أحدث الحلول الترميمية والتقنيات التجميلية، بل تمتد لتشمل الوقاية، ورفع الوعي
+            المجتمعي، وتوفير الرعاية المتكاملة الطبية والنفسية والوظيفية لمصابي الحروق والتحديات الترميمية المعقدة.
+          </p>
+          <p>
+            لقد قطع تخصص جراحة التجميل والترميم شوطاً كبيراً في التطور والابتكار، وأصبحت مجالات مثل الجراحة المجهرية
+            الدقيقة، زراعة الأنسجة وإعادة بناء التشوهات تُحدث فارقاً جوهرياً في حياة المرضى.
+          </p>
+          <p>
+            ومن هنا، حرصنا في النسخة الثامنة لهذا المؤتمر على أن تكون المحاور والأوراق البحثية المطروحة ملامسة لأحدث ما
+            توصل إليه العلم، بمشاركة نخبة متميزة من الخبراء والعلماء والباحثين من مختلف المؤسسات الطبية.
+          </p>
+          <p>
+            إن هذه المجلة العلمية الصادرة عن المؤتمر تُعد وثيقة مرجعية تعكس حجم الجهد العلمي والميداني المبذول، وتهدف
+            إلى نقل الخبرات والتجارب التطبيقية للأجيال الشابة من الأطباء والجراحين، بما يضمن استدامة التطوير ورفع جودة
+            الخدمات الصحية المقدمة لمجتمعاتنا.
+          </p>
+          <p>
+            ختاماً، أتوجه بجزيل الشكر والامتنان لوزارة الصحة والسكان والمجلس الطبي على دعمهم لنا في هذه المناسبة الرفيعة
+            وكذلك الشكر والعرفان للجان المؤتمر التي أعدت ونظمت هذا الحدث العلمي المتميز، ولجميع الباحثين والمتحدثين
+            الذين أثروا برنامجنا ببحوثهم وتجاربهم. الشكر موصول للشركات الداعمة والمركز الوطني للحروق على دعمهم المستمر
+            ولكل من أسهم في الإعداد لهذا المؤتمر لإنجاحه.
+          </p>
+          <p>
+            أتمنى لكم جميعاً مؤتمراً موفقاً وجلسات علمية مثمرة تُسهم في رسم آفاق جديدة لتخصصنا، والخروج بتوصيات ومقترحات
+            هامةً وذو قيمة، تساهم في تطوير جراحة التجميل والترميم والحروق وتحقق أعلى مستويات الرعاية الصحية في المستقبل.
+          </p>
+        </div>
+        <div class="closing">والله ولي التوفيق</div>
+        <div class="qmark br">“</div>
+      </div>
+
+      <svg class="wave-bottom" viewBox="0 0 210 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,40 V12 C35,0 70,22 110,14 C150,6 180,2 210,14 V40 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,40 V20 C35,8 72,30 112,22 C152,14 182,10 210,22 V40 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,17 C35,5 72,26 110,18 C150,10 182,6 210,18"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.2"
+          vector-effect="non-scaling-stroke"
+          opacity=".8"
+        />
+      </svg>
+      <div class="foot">المؤتمر العلمي الثامن 2026<span class="sep"></span><span class="num">07</span></div>
+    </section>
+
+    <!-- ================= PAGE 8 : SECRETARY GENERAL ================= -->
+    <section class="page">
+      <div class="bg-soft"></div>
+      <svg class="wave-top" viewBox="0 0 210 50" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 H210 V40 C175,50 140,22 100,30 C60,38 30,48 0,36 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,0 H210 V30 C178,40 140,14 100,22 C62,30 28,40 0,28 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,32 C30,44 62,34 100,26 C140,18 178,44 210,34"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.3"
+          vector-effect="non-scaling-stroke"
+          opacity=".85"
+        />
+      </svg>
+
+      <div class="sp-photo-accent"></div>
+      <div class="sp-photo">
+        <div class="in"><img src="images/dr-nasr-alqudsi.jpg" alt="أ.د/ نصر حميد القدسي" /></div>
+      </div>
+      <div class="cap-accent sp-title-acc"></div>
+      <div class="capsule sp-title">
+        <span class="deco-line"></span><span class="t">كلمة أمين عام الجمعية</span><span class="deco-line r"></span>
+      </div>
+      <div class="sp-name-line"></div>
+      <div class="sp-name">أ.د/ نصر حميد القدسي</div>
+
+      <div class="sp-card">
+        <div class="qmark tl">”</div>
+        <div class="basmala" style="margin-bottom: 2.4mm">بسم الله الرحمن الرحيم</div>
+        <div class="sp-body">
+          <p>
+            الحمد لله رب العالمين القائل ( قَالُوا سُبْحَانَكَ لَا عِلْمَ لَنَا إِلَّا مَا عَلَّمْتَنَا إِنَّكَ أَنْتَ
+            الْعَلِيمُ الْحَكِيمُ ) والصلاة والسلام على رسول الله الصادق الأمين خاتم النبيين وسيد المرسلين للناس أجمعين.
+          </p>
+          <p>
+            إن انعقاد المؤتمر الثامن لجراحة الترميم والتجميل والحروق، والذي يأتي امتداداً لرؤية جمعية جراحة الترميم
+            والتجميل والحروق في السعي المستمر نحو تقديم رعاية طبية متخصصة ترتقي لتصل إلى أعلى معايير الجودة والريادة
+            العلمية.
+          </p>
+          <p>
+            كما أن انعقاد هذا المؤتمر يمثل محطة علمية هامة تجمع نخبة من الجراحين والمتخصصين لتبادل الخبرات وتدارس أحدث
+            المستجدات في هذا التخصص الدقيق والحيوي. إن جراحة الترميم والتجميل وإصابات الحروق لم تعد تقتصر على الجانب
+            التجميلي فحسب، بل أصبحت حجر الزاوية في إعادة التأهيل الجسدي والنفسي للمرضى، وتخفيف المعاناة الناجمة عن
+            الحوادث والتشوهات والعيوب الخلقية.
+          </p>
+          <p>
+            إن التعامل مع حالات الحروق المعقدة والتشوهات الناجمة عنها يفرض علينا تحديات صحية وإنسانية هائلة، تتطلب منا
+            العمل بروح الفريق الواحد ووضع بروتوكولات سريرية وممارسات جراحية موحدة. ومن هنا تتجلى أهمية هذا المؤتمر في
+            تعزيز التواصل بين الجراحين والخط الأول من أطباء الطوارئ والجراحة العامة والرعاية الصحية الأولية لضمان التدخل
+            المبكر والحد من المضاعفات التراكمية.
+          </p>
+          <p>
+            نؤكد في إدارة الجمعية التزامنا الكامل بمواصلة تطوير المهارات السريرية والجراحية، ودعم الأبحاث العلمية
+            القائمة على البراهين، وتوطين التقنيات الحديثة في الممارسة اليومية، بما يساهم في بناء كوادر وطنية مؤهلة ويخفف
+            عن كاهل مرضانا مشقة السفر والتكاليف الباهظة للعلاج في الخارج.
+          </p>
+          <p>
+            وفي الختام، أتوجه بخالص الشكر والتقدير لكل من شارك وساهم في تنظيم وإنجاح هذا الحدث العلمي المتميز، متمنياً
+            أن أوراق العمل والمناقشات تثمر عن توصيات عملية تثري الممارسة الجراحية وتعود بالنفع المباشر على صحة المريض
+            والمجتمع.
+          </p>
+        </div>
+        <div class="closing">أتمنى لكم مؤتمراً موفقاً وناجحاً</div>
+        <div class="qmark br">“</div>
+      </div>
+
+      <svg class="wave-bottom" viewBox="0 0 210 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,40 V12 C35,0 70,22 110,14 C150,6 180,2 210,14 V40 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,40 V20 C35,8 72,30 112,22 C152,14 182,10 210,22 V40 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,17 C35,5 72,26 110,18 C150,10 182,6 210,18"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.2"
+          vector-effect="non-scaling-stroke"
+          opacity=".8"
+        />
+      </svg>
+      <div class="foot">المؤتمر العلمي الثامن 2026<span class="sep"></span><span class="num">08</span></div>
+    </section>
+
+    <!-- ================= PAGE 9 : ADS ================= -->
+    <section class="page last">
+      <div class="bg-soft"></div>
+      <svg class="wave-top" viewBox="0 0 210 50" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 H210 V40 C175,50 140,22 100,30 C60,38 30,48 0,36 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,0 H210 V30 C178,40 140,14 100,22 C62,30 28,40 0,28 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,32 C30,44 62,34 100,26 C140,18 178,44 210,34"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.3"
+          vector-effect="non-scaling-stroke"
+          opacity=".85"
+        />
+      </svg>
+
+      <div class="cap-accent ad-acc"></div>
+      <div class="capsule ad-title">
+        <span class="deco-line" style="width: 10mm"></span><span class="t">الإعلانات</span
+        ><span class="deco-line r" style="width: 10mm"></span>
+      </div>
+      <div class="ad-sub">شركاؤنا والجهات الداعمة</div>
+
+      <div class="ad" style="top: 70mm; left: 15mm; right: 15mm; height: 82mm">
+        <span class="corner tr"></span><span class="corner bl"></span>
+        <div class="c">
+          <div class="a" style="font-size: 20pt">مساحة إعلانية</div>
+          <div class="d" style="font-size: 10pt">نصف صفحة · 180 × 82 مم</div>
+        </div>
+      </div>
+      <div class="ad" style="top: 158mm; right: 15mm; width: 87mm; height: 48mm">
+        <span class="corner tr"></span><span class="corner bl"></span>
+        <div class="c">
+          <div class="a" style="font-size: 15pt">مساحة إعلانية</div>
+          <div class="d" style="font-size: 9pt">ربع صفحة · 87 × 48 مم</div>
+        </div>
+      </div>
+      <div class="ad" style="top: 158mm; left: 15mm; width: 87mm; height: 48mm">
+        <span class="corner tr"></span><span class="corner bl"></span>
+        <div class="c">
+          <div class="a" style="font-size: 15pt">مساحة إعلانية</div>
+          <div class="d" style="font-size: 9pt">ربع صفحة · 87 × 48 مم</div>
+        </div>
+      </div>
+      <div class="ad" style="top: 211mm; right: 14.5mm; width: 41.5mm; height: 22mm">
+        <div class="c">
+          <div class="a" style="font-size: 10pt">مساحة إعلانية</div>
+          <div class="d" style="font-size: 7.5pt">شعار · 41 × 22 مم</div>
+        </div>
+      </div>
+      <div class="ad" style="top: 211mm; right: 61mm; width: 41.5mm; height: 22mm">
+        <div class="c">
+          <div class="a" style="font-size: 10pt">مساحة إعلانية</div>
+          <div class="d" style="font-size: 7.5pt">شعار · 41 × 22 مم</div>
+        </div>
+      </div>
+      <div class="ad" style="top: 211mm; right: 107.5mm; width: 41.5mm; height: 22mm">
+        <div class="c">
+          <div class="a" style="font-size: 10pt">مساحة إعلانية</div>
+          <div class="d" style="font-size: 7.5pt">شعار · 41 × 22 مم</div>
+        </div>
+      </div>
+      <div class="ad" style="top: 211mm; right: 154mm; width: 41.5mm; height: 22mm">
+        <div class="c">
+          <div class="a" style="font-size: 10pt">مساحة إعلانية</div>
+          <div class="d" style="font-size: 7.5pt">شعار · 41 × 22 مم</div>
+        </div>
+      </div>
+
+      <div class="thanks">
+        <div class="h">شكر وتقدير للجهات الداعمة <i>♥</i></div>
+        <div class="l">
+          وزارة الصحة العامة والسكان<span class="dot"></span>المجلس الطبي<span class="dot"></span>المركز الوطني
+          للحروق<span class="dot"></span>الشركات الداعمة
+        </div>
+      </div>
+
+      <svg class="end-band" viewBox="0 0 210 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,40 V10 C35,0 70,20 110,12 C150,4 180,0 210,12 V40 Z" fill="url(#gSky)" opacity=".55" />
+        <path d="M0,40 V17 C35,6 72,26 112,19 C152,12 182,8 210,19 V40 Z" fill="url(#gDeep)" />
+        <path
+          d="M0,14 C35,3 72,23 110,15 C150,7 182,3 210,15"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.2"
+          vector-effect="non-scaling-stroke"
+          opacity=".8"
+        />
+      </svg>
+      <div class="end-foot">
+        <span class="lg"><img src="images/logo-association.png" alt="" /></span
+        ><span class="tx">جمعية جراحي التجميل والترميم والحروق اليمنية © 2026</span><span class="num">09</span>
+      </div>
+    </section>
+  </body>
+</html>
